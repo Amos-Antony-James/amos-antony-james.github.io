@@ -1749,14 +1749,14 @@
         0 30px 80px rgba(0, 0, 0, 0.75),
         0 0 90px rgba(245, 185, 66, 0.22);
       background: var(--color-bg-soft);
-      animation: floatY 7s ease-in-out infinite;
+      animation: portraitFloat 7s ease-in-out infinite;
     }
     .hero-portrait img {
       width: 100%; height: 100%;
       object-fit: cover; object-position: 50% 28%;
       display: block;
     }
-    @keyframes floatY {
+    @keyframes portraitFloat {
       0%, 100% { transform: translateY(0); }
       50%      { transform: translateY(-10px); }
     }
