@@ -4,13 +4,14 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Amos Antony — +2 Bio Science student, Minecraft enthusiast, sports lover and home-cook. A premium minimal personal portfolio." />
-  <meta name="author" content="Amos Antony" />
+  <meta name="description" content="Amos Antony James — gamer, sports lover, road kid from Kerala. Minecraft, cricket, volleyball, ghee rice and the open road." />
+  <meta name="author" content="Amos Antony James" />
   <meta name="theme-color" content="#ffffff" />
-  <meta property="og:title" content="Amos Antony — Personal Portfolio" />
-  <meta property="og:description" content="Bio Science student. Minecraft builder. Cricket, football and volleyball enthusiast. Home-cook always trying something new." />
+  <meta property="og:title" content="Amos Antony James — Personal Portfolio" />
+  <meta property="og:description" content="Gamer. Sports kid. Road kid. Minecraft, cricket, volleyball, ghee rice and three vehicles I love." />
   <meta property="og:type" content="website" />
-  <title>Amos Antony — Personal Portfolio</title>
+  <meta property="og:image" content="assets/img/amos-profile.jpg" />
+  <title>Amos Antony James — Personal Portfolio</title>
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%236c63ff'/%3E%3Ctext x='50' y='62' font-family='Poppins,Arial' font-size='52' font-weight='700' text-anchor='middle' fill='white'%3EA%3C/text%3E%3C/svg%3E" />
 
@@ -570,7 +571,7 @@
     }
     .hero-avatar {
       position: relative;
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 4 / 5;
       border-radius: var(--radius-xl);
       background:
         radial-gradient(120% 80% at 0% 0%, #ffe2d6 0%, transparent 50%),
@@ -584,22 +585,21 @@
       position: absolute; inset: 0;
       background: radial-gradient(circle at 50% 50%, rgba(108,99,255,0.08), transparent 60%);
       mix-blend-mode: multiply;
+      pointer-events: none;
+      z-index: 2;
     }
-    .avatar-monogram {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: clamp(6rem, 18vw, 12rem);
-      letter-spacing: -0.08em;
-      background: linear-gradient(135deg, #6c63ff, #ff7a59);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      line-height: 1;
-      animation: monoFloat 6s ease-in-out infinite;
+    .hero-photo {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: 50% 30%;
+      display: block;
+      animation: monoFloat 8s ease-in-out infinite;
+      transform: translateZ(0);
+      z-index: 1;
     }
     @keyframes monoFloat {
       0%, 100% { transform: translateY(0); }
-      50%      { transform: translateY(-10px); }
+      50%      { transform: translateY(-8px); }
     }
 
     .hero-card-pills {
@@ -662,6 +662,144 @@
       .hero-grid { grid-template-columns: 1fr; gap: 48px; }
       .hero-card { max-width: 460px; margin: 0 auto; }
       .scroll-cue { display: none; }
+    }
+
+    /* ============================================================
+       9b. ROAD — vehicles section
+       ============================================================ */
+    .road-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    @media (max-width: 880px) { .road-grid { grid-template-columns: 1fr; } }
+    .road-card {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--color-border);
+      box-shadow: var(--color-shadow);
+      transition: transform var(--t-base), box-shadow var(--t-base);
+    }
+    .road-card:hover { transform: translateY(-4px); box-shadow: var(--color-shadow-lg); }
+    .road-art {
+      aspect-ratio: 4 / 5;
+      background: linear-gradient(135deg, #f5f7fa, #eef0f6);
+      overflow: hidden;
+      position: relative;
+    }
+    .road-art img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: 50% 50%;
+      display: block;
+      transition: transform 6s ease;
+    }
+    .road-card:hover .road-art img { transform: scale(1.04); }
+    .road-art .plate-badge {
+      position: absolute; bottom: 12px; left: 12px;
+      background: rgba(20,20,40,0.78);
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      backdrop-filter: blur(6px);
+    }
+    .road-art-css {
+      display: grid; place-items: center;
+      background: linear-gradient(135deg, #eef0f6, #f5f7fa);
+    }
+    .moto-svg { width: 70%; max-width: 200px; }
+    .road-body { padding: 22px 22px 26px; }
+    .road-body h4 { font-family: var(--font-display); font-size: 1.25rem; margin: 0 0 6px; }
+    .road-body p  { color: var(--color-text-muted); font-size: 0.95rem; margin: 0; }
+    .road-tag { display: inline-block; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent); font-weight: 700; margin-bottom: 6px; }
+
+    /* ============================================================
+       9c. SIDE STRIP — wide image break
+       ============================================================ */
+    .side-strip {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      margin: 60px 0 0;
+      box-shadow: var(--color-shadow-lg);
+    }
+    .side-strip img {
+      width: 100%; height: 480px;
+      object-fit: cover;
+      display: block;
+      transition: transform 12s ease;
+    }
+    .side-strip:hover img { transform: scale(1.05); }
+    .side-strip .strip-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.0) 30%, rgba(0,0,0,0.55) 100%);
+      pointer-events: none;
+    }
+    .side-strip .strip-caption {
+      position: absolute; left: 36px; bottom: 32px; right: 36px;
+      color: #fff;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+      letter-spacing: -0.01em;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.4);
+    }
+    .side-strip .strip-caption span {
+      display: block;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 0.65em;
+      opacity: 0.85;
+      margin-top: 6px;
+    }
+    @media (max-width: 640px) {
+      .side-strip img { height: 360px; }
+      .side-strip .strip-caption { left: 22px; right: 22px; bottom: 22px; }
+    }
+
+    /* ============================================================
+       9d. CLOSING QUOTE — final line above footer
+       ============================================================ */
+    .closing-line {
+      padding: 100px 0 80px;
+      text-align: center;
+      background: linear-gradient(180deg, #ffffff, #f7f8fb);
+    }
+    .closing-line blockquote {
+      max-width: 760px;
+      margin: 0 auto;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(1.35rem, 3vw, 1.9rem);
+      line-height: 1.5;
+      color: var(--color-text);
+      letter-spacing: -0.005em;
+    }
+    .closing-line blockquote::before,
+    .closing-line blockquote::after {
+      content: "";
+      display: block;
+      width: 36px; height: 1px;
+      background: var(--color-border-strong);
+      margin: 18px auto;
+    }
+    .closing-line cite {
+      display: inline-block;
+      margin-top: 8px;
+      font-style: normal;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
     }
 
     /* ============================================================
@@ -1436,7 +1574,7 @@
        ============================================================ */
     .connect-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 16px;
     }
     .social {
@@ -1625,7 +1763,7 @@
   <nav class="nav" id="nav" aria-label="Primary">
     <a href="#home" class="nav-brand">
       <span class="nav-brand-mark">A</span>
-      <span>Amos&nbsp;Antony</span>
+      <span>Amos&nbsp;Antony&nbsp;James</span>
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#home" data-link>Home</a></li>
@@ -1633,8 +1771,8 @@
       <li><a href="#interests" data-link>Interests</a></li>
       <li><a href="#minecraft" data-link>Minecraft</a></li>
       <li><a href="#sports" data-link>Sports</a></li>
+      <li><a href="#road" data-link>On the road</a></li>
       <li><a href="#kitchen" data-link>Kitchen</a></li>
-      <li><a href="#journey" data-link>Journey</a></li>
       <li><a href="#connect" data-link>Connect</a></li>
     </ul>
     <div class="nav-cta">
@@ -1655,26 +1793,25 @@
     <div class="container hero-grid">
       <div class="hero-content">
         <span class="hero-tag reveal">
-          <span class="ping"></span> Available for new friendships, fun matches & food chats
+          <span class="ping"></span> Positive vibe • Respect-first • Always up for a good chat
         </span>
         <h1 class="hero-title reveal">
           <span class="first-name">Amos</span>
-          <span class="last-name">Antony.</span>
+          <span class="last-name">Antony&nbsp;James.</span>
         </h1>
         <p class="hero-typed reveal delay-1">
           <span id="typed"></span><span class="typed-cursor" aria-hidden="true"></span>
         </p>
         <p class="hero-subtitle reveal delay-2">
-          A +2 Bio Science student from Kerala — happiest in a Minecraft world
-          I built from scratch, on a cricket field with friends, or in the
-          kitchen turning ordinary ingredients into a Sunday-feast.
+          Gamer. Sports kid. Road kid. Happiest in a Minecraft world,
+          on a cricket pitch, or driving somewhere quiet with good music on.
         </p>
         <div class="hero-actions reveal delay-3">
           <a href="#about" class="btn btn-primary">
             Get to know me <span class="arrow">→</span>
           </a>
-          <a href="#minecraft" class="btn btn-ghost">
-            See my Minecraft worlds
+          <a href="#road" class="btn btn-ghost">
+            See my rides
           </a>
         </div>
         <div class="hero-meta reveal delay-4">
@@ -1683,23 +1820,23 @@
             <div class="lbl">Years gaming</div>
           </div>
           <div class="hero-meta-item">
-            <div class="num"><span data-counter data-target="3">0</span></div>
-            <div class="lbl">Sports played</div>
+            <div class="num"><span data-counter data-target="2">0</span></div>
+            <div class="lbl">Sports I play</div>
           </div>
           <div class="hero-meta-item">
-            <div class="num"><span data-counter data-target="40">0</span>+</div>
-            <div class="lbl">Dishes tried</div>
+            <div class="num"><span data-counter data-target="3">0</span></div>
+            <div class="lbl">Rides I love</div>
           </div>
         </div>
       </div>
       <div class="hero-card reveal reveal-right" id="heroCard">
         <div class="hero-avatar">
-          <span class="avatar-monogram">AA</span>
+          <img class="hero-photo" src="assets/img/amos-profile.jpg" alt="Amos Antony James" loading="eager" />
         </div>
         <div class="hero-card-pills">
-          <span class="pill-chip pill-1"><span class="ico">⛏️</span> Minecraft addict</span>
-          <span class="pill-chip pill-2"><span class="ico">🏏</span> Cricket maniac</span>
-          <span class="pill-chip pill-3"><span class="ico">👨‍🍳</span> Curious cook</span>
+          <span class="pill-chip pill-1"><span class="ico">⛏️</span> Minecraft</span>
+          <span class="pill-chip pill-2"><span class="ico">🏏</span> Cricket</span>
+          <span class="pill-chip pill-3"><span class="ico">🚗</span> On the road</span>
         </div>
       </div>
     </div>
@@ -1716,21 +1853,21 @@
     <div class="marquee-track">
       <span class="marquee-item">⛏️ Minecraft <span class="dot"></span></span>
       <span class="marquee-item">🏏 Cricket <span class="dot"></span></span>
-      <span class="marquee-item">⚽ Football <span class="dot"></span></span>
       <span class="marquee-item">🏐 Volleyball <span class="dot"></span></span>
-      <span class="marquee-item">👨‍🍳 Cooking <span class="dot"></span></span>
-      <span class="marquee-item">🌿 Bio Science <span class="dot"></span></span>
-      <span class="marquee-item">🍝 Foodie <span class="dot"></span></span>
-      <span class="marquee-item">🎯 Curious mind <span class="dot"></span></span>
+      <span class="marquee-item">🚗 On the road <span class="dot"></span></span>
+      <span class="marquee-item">🍛 Ghee rice <span class="dot"></span></span>
+      <span class="marquee-item">📷 Photography <span class="dot"></span></span>
+      <span class="marquee-item">🤝 Real conversations <span class="dot"></span></span>
+      <span class="marquee-item">✨ Positive vibe <span class="dot"></span></span>
       <!-- duplicate for seamless loop -->
       <span class="marquee-item">⛏️ Minecraft <span class="dot"></span></span>
       <span class="marquee-item">🏏 Cricket <span class="dot"></span></span>
-      <span class="marquee-item">⚽ Football <span class="dot"></span></span>
       <span class="marquee-item">🏐 Volleyball <span class="dot"></span></span>
-      <span class="marquee-item">👨‍🍳 Cooking <span class="dot"></span></span>
-      <span class="marquee-item">🌿 Bio Science <span class="dot"></span></span>
-      <span class="marquee-item">🍝 Foodie <span class="dot"></span></span>
-      <span class="marquee-item">🎯 Curious mind <span class="dot"></span></span>
+      <span class="marquee-item">🚗 On the road <span class="dot"></span></span>
+      <span class="marquee-item">🍛 Ghee rice <span class="dot"></span></span>
+      <span class="marquee-item">📷 Photography <span class="dot"></span></span>
+      <span class="marquee-item">🤝 Real conversations <span class="dot"></span></span>
+      <span class="marquee-item">✨ Positive vibe <span class="dot"></span></span>
     </div>
   </div>
 
@@ -1742,72 +1879,55 @@
       <div class="section-head">
         <span class="eyebrow reveal">About me</span>
         <h2 class="section-title reveal">
-          A student by day, a <em>builder, batsman & cook</em> by everything else.
+          I'm Amos. I keep it <em>real, respectful</em> and a little aesthetic.
         </h2>
         <p class="section-lede reveal delay-1">
-          I'm Amos Antony — currently in +2, studying Bio Science. Outside the
-          textbooks, my life is split pretty evenly between three worlds I love:
-          a Minecraft world I'm forever expanding, a sports field with whoever's
-          free, and the family kitchen where I keep trying new recipes.
+          A passionate gamer and sports kid from Kerala. I love good people,
+          good food, and the open road.
         </p>
       </div>
 
       <div class="about-grid">
         <div class="about-paragraphs reveal reveal-left">
           <p>
-            "Curiosity always wins. If something looks fun, I'll usually
-            find a way to try it — whether that's a new biome, a new sport,
-            or a new dish."
+            Loves to talk. Loves to listen more. I won't even exist in
+            the room if there's disrespect in the air — culture, people,
+            small details, all of it matters to me.
           </p>
           <p>
-            <strong>School-wise</strong>, I'm deep into Bio Science right
-            now — Botany, Zoology, Chemistry and Physics fill most of my
-            mornings. I find living systems genuinely fascinating: the way a
-            tiny cell can keep an entire body running, the chemistry behind
-            every leaf, every heartbeat. It's the part of school I actually
-            look forward to.
-          </p>
-          <p>
-            <strong>Off the books</strong>, I switch personalities. On
-            Minecraft I'm the kid building a castle nobody asked for. On the
-            cricket field I'm hyper-competitive about a single run. In the
-            kitchen, I become weirdly patient — willing to wait on a slow
-            curry just to see how it turns out.
-          </p>
-          <p>
-            <strong>What people usually say about me</strong> is that I'm
-            chill but stubborn — I won't quit a build, a match, or a recipe
-            halfway. If I started it, I'm finishing it. Hopefully well.
+            Most days you'll find me on Minecraft, on a pitch, or driving
+            somewhere with the windows down. The rest of the time, I'm
+            eating ghee rice and pretending I'll stop after one plate.
           </p>
         </div>
 
         <div class="reveal reveal-right">
           <div class="about-stats">
             <div class="stat-card">
-              <div class="num"><span data-counter data-target="11">0</span><span class="suffix">+2</span></div>
-              <div class="lbl">Bio Science Student</div>
-            </div>
-            <div class="stat-card">
               <div class="num"><span data-counter data-target="1200">0</span><span class="suffix">h</span></div>
-              <div class="lbl">In Minecraft worlds</div>
+              <div class="lbl">Hours on Minecraft</div>
             </div>
             <div class="stat-card">
               <div class="num"><span data-counter data-target="3">0</span></div>
-              <div class="lbl">Sports I play weekly</div>
+              <div class="lbl">Rides I drive</div>
+            </div>
+            <div class="stat-card">
+              <div class="num"><span data-counter data-target="2">0</span></div>
+              <div class="lbl">Sports I play</div>
             </div>
             <div class="stat-card">
               <div class="num"><span data-counter data-target="40">0</span><span class="suffix">+</span></div>
-              <div class="lbl">Recipes attempted</div>
+              <div class="lbl">Plates of ghee rice</div>
             </div>
           </div>
 
           <div class="traits">
-            <div class="trait"><span class="ti">🌿</span> Bio-curious mind</div>
-            <div class="trait"><span class="ti">🎮</span> Sandbox creator</div>
-            <div class="trait"><span class="ti">⚡</span> High-energy on the field</div>
-            <div class="trait"><span class="ti">🍳</span> Patient in the kitchen</div>
-            <div class="trait"><span class="ti">🤝</span> Team-first by default</div>
-            <div class="trait"><span class="ti">🧠</span> "Try it once" attitude</div>
+            <div class="trait"><span class="ti">🤝</span> Respect-first — always</div>
+            <div class="trait"><span class="ti">✨</span> Culture &amp; aesthetic person</div>
+            <div class="trait"><span class="ti">💬</span> Talker. Connector.</div>
+            <div class="trait"><span class="ti">📷</span> Quiet photographer</div>
+            <div class="trait"><span class="ti">⛏️</span> Minecraft for life</div>
+            <div class="trait"><span class="ti">🚗</span> Road kid at heart</div>
           </div>
         </div>
       </div>
@@ -1825,83 +1945,72 @@
           Five things I happily lose <em>track of time</em> doing.
         </h2>
         <p class="section-lede reveal delay-1">
-          A tour of the hobbies that fill the space between classes, exams
-          and Sunday lunches — what they look like for me, and why I keep
-          coming back.
+          The hobbies that fill the spaces in between. Short list, real list.
         </p>
       </div>
 
       <div class="interest-grid">
         <article class="interest minecraft reveal" style="--w: 95%;">
           <div class="interest-icon">⛏️</div>
-          <h3>Minecraft — my favourite world</h3>
+          <h3>Minecraft — every day</h3>
           <p>
-            Most of my free hours go here. I usually start with a quiet
-            survival world, then end up obsessing over a single mega-build:
-            a hill-top castle, a redstone farm, a cosy cottage by a river.
-            I love the loop — gather, plan, build, rebuild because I changed
-            my mind, finally show it off to friends.
+            My favourite world. I'm on it almost every night — quiet survival,
+            big builds, slow base improvements, SMP runs with friends.
           </p>
           <div class="interest-tags">
-            <span>Survival</span><span>Creative</span><span>Castles</span>
-            <span>Redstone</span><span>Auto-farms</span><span>SMP nights</span>
+            <span>Survival</span><span>Castles</span><span>SMP nights</span>
           </div>
           <div class="meter"><i></i></div>
         </article>
 
-        <article class="interest cricket reveal delay-1" style="--w: 88%;">
+        <article class="interest cricket reveal delay-1" style="--w: 90%;">
           <div class="interest-icon">🏏</div>
           <h3>Cricket</h3>
           <p>
-            Backyard, school ground, doesn't matter — I'm in. I bat with way
-            more confidence than I should and I'll happily argue an LBW for
-            an hour.
+            Backyard, school ground, doesn't matter. I bat with way more
+            confidence than I should and I'll happily argue an LBW for an hour.
           </p>
           <div class="interest-tags">
-            <span>Batting</span><span>All-rounder</span><span>Tape-ball</span>
+            <span>Batting</span><span>Tape-ball</span>
           </div>
           <div class="meter"><i></i></div>
         </article>
 
-        <article class="interest football reveal delay-2" style="--w: 80%;">
-          <div class="interest-icon">⚽</div>
-          <h3>Football</h3>
-          <p>
-            Pure energy. I love the running, the passes that work, the goals
-            that don't. It's the easiest way to forget about everything else
-            for a solid hour.
-          </p>
-          <div class="interest-tags">
-            <span>Midfield</span><span>5-a-side</span>
-          </div>
-          <div class="meter"><i></i></div>
-        </article>
-
-        <article class="interest volleyball reveal delay-3" style="--w: 78%;">
+        <article class="interest volleyball reveal delay-2" style="--w: 82%;">
           <div class="interest-icon">🏐</div>
           <h3>Volleyball</h3>
           <p>
             Coordination + chaos. I'm the guy who'll dive for a ball that
-            was never coming back. School matches are easily my favourite
-            evenings.
+            was never coming back.
           </p>
           <div class="interest-tags">
-            <span>Setter</span><span>Defence</span><span>School team vibes</span>
+            <span>Setter</span><span>Team vibes</span>
           </div>
           <div class="meter"><i></i></div>
         </article>
 
-        <article class="interest cooking reveal delay-4" style="--w: 84%;">
-          <div class="interest-icon">👨‍🍳</div>
-          <h3>Food &amp; Cooking</h3>
+        <article class="interest reveal delay-3" style="--w: 70%;">
+          <div class="interest-icon">📷</div>
+          <h3>Photography</h3>
           <p>
-            I love good food, and lately I love making it. Kerala home-style
-            curries, instant-noodle hacks, weekend pasta experiments — the
-            kitchen is where my "let's try it" attitude really lives.
+            Quiet hobby. I just like catching a good moment — not a celeb,
+            not chasing posts.
           </p>
           <div class="interest-tags">
-            <span>Chicken curry</span><span>Pasta</span><span>Biryani</span>
-            <span>Eggs (any way)</span><span>Snack hacks</span>
+            <span>Phone shots</span><span>Real moments</span>
+          </div>
+          <div class="meter"><i></i></div>
+        </article>
+
+        <article class="interest cooking reveal delay-4" style="--w: 86%;">
+          <div class="interest-icon">🍛</div>
+          <h3>Food &amp; Ghee Rice</h3>
+          <p>
+            Muslim-style ghee rice is pure <em>mohabbat</em> for me. After
+            that — chicken momos, motta puffs, and a slice of lime, any time.
+          </p>
+          <div class="interest-tags">
+            <span>Ghee rice</span><span>Momos</span><span>Motta puffs</span>
           </div>
           <div class="meter"><i></i></div>
         </article>
@@ -2016,15 +2125,13 @@
           <div class="role">Cricket</div>
           <h3>The one I'd play every single evening.</h3>
           <p>
-            Tape-ball galleries, school matches, neighbourhood "quick three
-            overs" that turn into full innings — cricket is the sport I
-            grew up around. I bat top order when allowed and bowl when I'm
-            asked, but mostly I just want a turn at the crease.
+            Tape-ball galleries, school matches, neighbourhood “quick three
+            overs” that turn into full innings. I bat top order when allowed,
+            field anywhere I'm needed, and never say no to one more over.
           </p>
           <ul class="sport-features">
             <li>Top-order batter</li>
-            <li>Decent fielder</li>
-            <li>Calls every "no-ball"</li>
+            <li>Calls every “no-ball”</li>
             <li>Always up for one more over</li>
           </ul>
         </div>
@@ -2032,46 +2139,103 @@
 
       <div class="sport-row reverse">
         <div class="sport-art reveal reveal-right">
-          <div class="ball ball-football"></div>
-        </div>
-        <div class="sport-content reveal reveal-left">
-          <div class="role">Football</div>
-          <h3>The one that resets my mood.</h3>
-          <p>
-            Football for me is less about technique and more about therapy.
-            A bad day at school turns around the second I'm running after
-            a ball. Quick passes, simple movement, and a goal once in a
-            while — that's enough.
-          </p>
-          <ul class="sport-features">
-            <li>Plays midfield</li>
-            <li>Loves a clean assist</li>
-            <li>Comfortable on either foot</li>
-            <li>Won't stop running</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="sport-row">
-        <div class="sport-art reveal reveal-left">
           <div class="ball ball-volley"></div>
         </div>
-        <div class="sport-content reveal reveal-right">
+        <div class="sport-content reveal reveal-left">
           <div class="role">Volleyball</div>
           <h3>The one that brings out my dive.</h3>
           <p>
             School volleyball matches are easily my favourite memory of
             +1 — the team chants, the rotations, the chaos when nobody
-            knows whose ball it was. I'm not the spiker, I'm the guy who
-            keeps the rally alive a second longer than I should.
+            knows whose ball it was. I keep the rally alive a second
+            longer than I should.
           </p>
           <ul class="sport-features">
             <li>Setter / Libero</li>
-            <li>Yells "MINE!" too often</li>
-            <li>Diver by instinct</li>
+            <li>Yells “MINE!” too often</li>
             <li>Team-energy guy</li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ON THE ROAD — vehicles
+       ============================================================ -->
+  <section class="section" id="road" style="background: linear-gradient(180deg, #ffffff, #f7f8fb);">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow reveal">On the road</span>
+        <h2 class="section-title reveal">
+          Three rides, one rule — <em>just drive</em>.
+        </h2>
+        <p class="section-lede reveal delay-1">
+          Some of the best evenings happen with the windows down and
+          nowhere specific to be.
+        </p>
+      </div>
+
+      <div class="road-grid">
+        <article class="road-card reveal">
+          <div class="road-art">
+            <img src="assets/img/mahindra-invader.jpg" alt="Mahindra Invader — KL 10AE 7999" loading="lazy" />
+            <span class="plate-badge">KL 10AE 7999</span>
+          </div>
+          <div class="road-body">
+            <span class="road-tag">Daily explorer</span>
+            <h4>Mahindra Invader</h4>
+            <p>Built for the rough roads. Where the tarmac ends, this one starts.</p>
+          </div>
+        </article>
+
+        <article class="road-card reveal delay-1">
+          <div class="road-art">
+            <img src="assets/img/tata-hexa.jpg" alt="Tata Hexa — KL 34F 3388" loading="lazy" />
+            <span class="plate-badge">KL 34F 3388</span>
+          </div>
+          <div class="road-body">
+            <span class="road-tag">Weekend kind of car</span>
+            <h4>Tata Hexa</h4>
+            <p>Long drives, tea estates, big skies. The one I love taking the family in.</p>
+          </div>
+        </article>
+
+        <article class="road-card reveal delay-2">
+          <div class="road-art road-art-css">
+            <svg class="moto-svg" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="mg" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0" stop-color="#6c63ff"/>
+                  <stop offset="1" stop-color="#ff7a59"/>
+                </linearGradient>
+              </defs>
+              <!-- wheels -->
+              <circle cx="45" cy="95" r="22" fill="#14151a"/>
+              <circle cx="45" cy="95" r="10" fill="#80838f" opacity="0.6"/>
+              <circle cx="45" cy="95" r="3" fill="#fff"/>
+              <circle cx="160" cy="95" r="22" fill="#14151a"/>
+              <circle cx="160" cy="95" r="10" fill="#80838f" opacity="0.6"/>
+              <circle cx="160" cy="95" r="3" fill="#fff"/>
+              <!-- frame -->
+              <path d="M 50 90 L 90 60 L 130 55 L 160 90" stroke="url(#mg)" stroke-width="6" fill="none" stroke-linecap="round"/>
+              <!-- tank -->
+              <path d="M 80 60 Q 100 40 130 55 L 125 70 L 85 70 Z" fill="url(#mg)"/>
+              <!-- seat -->
+              <rect x="120" y="55" width="35" height="8" rx="3" fill="#14151a"/>
+              <!-- headlight -->
+              <circle cx="75" cy="55" r="8" fill="#f5b942"/>
+              <!-- handle -->
+              <path d="M 75 55 L 70 38" stroke="#14151a" stroke-width="4" stroke-linecap="round"/>
+              <path d="M 62 36 L 80 36" stroke="#14151a" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="road-body">
+            <span class="road-tag">City commute</span>
+            <h4>Honda Unicorn</h4>
+            <p>The everyday ride. Quick errands, evening rounds, music in the helmet.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -2084,55 +2248,35 @@
       <div class="section-head">
         <span class="eyebrow reveal">From my kitchen</span>
         <h2 class="section-title reveal">
-          Dishes I keep <em>coming back to</em>.
+          Muslim-style <em>Ghee Rice</em> — my mohabbat.
         </h2>
         <p class="section-lede reveal delay-1">
-          A loose collection of food I either love eating, love cooking, or
-          (in most cases) both. I'm still learning — but already loud about
-          my opinions.
+          Ghee rice the way the Muslim aunties make it is a sweet-spot of
+          mine — pure mohabbat on a plate. Around it: a small list of things
+          I genuinely love.
         </p>
       </div>
 
       <div class="kitchen-grid">
         <div class="card dish reveal">
           <div class="plate plate-biryani"></div>
-          <h4>Chicken Biryani</h4>
-          <p>The one dish I'll travel for. Long-grain rice, lots of patience, even more onions.</p>
+          <h4>Muslim-style Ghee Rice</h4>
+          <p>The one that hits like a hug. Fragrant, golden, the whole-house-smells kind of plate. Mohabbat.</p>
         </div>
         <div class="card dish reveal delay-1">
-          <div class="plate plate-curry"></div>
-          <h4>Kerala Chicken Curry</h4>
-          <p>Coconut milk, curry leaves, the smell that fills the entire house. Comfort food.</p>
-        </div>
-        <div class="card dish reveal delay-2">
-          <div class="plate plate-pasta"></div>
-          <h4>Weekend Pasta</h4>
-          <p>My "I'm going to be a chef someday" experiment. Tomato base, way too much cheese.</p>
-        </div>
-        <div class="card dish reveal delay-3">
-          <div class="plate plate-pizza"></div>
-          <h4>Homemade Pizza</h4>
-          <p>Dough never quite right, toppings always overdone, somehow still amazing.</p>
-        </div>
-        <div class="card dish reveal">
           <div class="plate plate-noodles"></div>
-          <h4>Late-night Noodles</h4>
-          <p>Maggi, but loaded — egg, butter, onions, masala. The official study-break meal.</p>
-        </div>
-        <div class="card dish reveal delay-1">
-          <div class="plate plate-pancake"></div>
-          <h4>Pancakes</h4>
-          <p>Sundays only. Dangerously sweet. Honey, banana, sometimes chocolate when no one's looking.</p>
+          <h4>Chicken Momos</h4>
+          <p>Steamed, spicy, in a tiny bowl. The snack I'll order every single time without thinking.</p>
         </div>
         <div class="card dish reveal delay-2">
-          <div class="plate plate-icecream"></div>
-          <h4>Ice-cream Bowls</h4>
-          <p>Not really cooking, but I assemble like a pro. Mix-ins are everything.</p>
+          <div class="plate plate-pizza"></div>
+          <h4>Motta Puffs</h4>
+          <p>Bakery classic. Flaky pastry, boiled egg, evening chai energy. Pure nostalgia.</p>
         </div>
         <div class="card dish reveal delay-3">
           <div class="plate plate-salad"></div>
-          <h4>Fresh Salads</h4>
-          <p>Bio Science makes me feel guilty often. Salads are my apology to my body.</p>
+          <h4>Lime</h4>
+          <p>A squeeze on everything. The unsung hero of every plate I touch.</p>
         </div>
       </div>
     </div>
@@ -2154,11 +2298,11 @@
         </div>
         <div class="stat reveal delay-2">
           <div class="num"><span data-counter data-target="40">0</span>+</div>
-          <div class="lbl">Dishes attempted</div>
+          <div class="lbl">Plates of ghee rice</div>
         </div>
         <div class="stat reveal delay-3">
-          <div class="num"><span data-counter data-target="6">0</span></div>
-          <div class="lbl">Subjects in +2 Bio</div>
+          <div class="num"><span data-counter data-target="3">0</span></div>
+          <div class="lbl">Rides on the road</div>
         </div>
       </div>
     </div>
@@ -2175,8 +2319,7 @@
           A short, honest <em>timeline</em>.
         </h2>
         <p class="section-lede reveal delay-1" style="margin: 0 auto;">
-          Big moments, small wins, a few forgotten Minecraft worlds, and the
-          slow climb from playground games to school teams.
+          A few real markers. Nothing fancy.
         </p>
       </div>
 
@@ -2185,8 +2328,8 @@
           <span class="tl-dot"></span>
           <div class="tl-card">
             <span class="tl-year">Early years</span>
-            <h4>First time holding a cricket bat</h4>
-            <p>Backyard cricket with cousins. Lost more games than I won, loved every single one.</p>
+            <h4>First cricket bat in hand</h4>
+            <p>Backyard cricket with cousins. Lost more than I won, loved every single one.</p>
           </div>
         </div>
         <div class="tl-item reveal reveal-right">
@@ -2194,39 +2337,23 @@
           <div class="tl-card">
             <span class="tl-year">Middle school</span>
             <h4>Discovered Minecraft</h4>
-            <p>Started in survival, instantly addicted. First "house" was a 4×4 dirt cube with a door.</p>
+            <p>First "house" was a 4×4 dirt cube with a door. Been hooked ever since.</p>
           </div>
         </div>
         <div class="tl-item reveal reveal-left">
           <span class="tl-dot"></span>
           <div class="tl-card">
-            <span class="tl-year">High school</span>
-            <h4>Joined the school volleyball team</h4>
-            <p>Setter most days, libero on bad ones. Best evenings of my school life.</p>
+            <span class="tl-year">School team</span>
+            <h4>Volleyball + cricket evenings</h4>
+            <p>Setter on volleyball nights, top order on cricket evenings. Easiest decision of my life.</p>
           </div>
         </div>
         <div class="tl-item reveal reveal-right">
           <span class="tl-dot"></span>
           <div class="tl-card">
-            <span class="tl-year">10th grade</span>
-            <h4>Picked Bio Science for +1</h4>
-            <p>Said no to a "safer" path on purpose. Loved Biology too much to drop it.</p>
-          </div>
-        </div>
-        <div class="tl-item reveal reveal-left">
-          <span class="tl-dot"></span>
-          <div class="tl-card">
-            <span class="tl-year">+1</span>
-            <h4>Started cooking — properly</h4>
-            <p>Began with eggs, leveled up to chicken curry, somehow ended up making biryani.</p>
-          </div>
-        </div>
-        <div class="tl-item reveal reveal-right">
-          <span class="tl-dot"></span>
-          <div class="tl-card">
-            <span class="tl-year">+2 — now</span>
-            <h4>Final school year</h4>
-            <p>Studying hard, building harder, still squeezing in matches whenever the schedule lets me.</p>
+            <span class="tl-year">Now</span>
+            <h4>Minecraft, road trips, ghee rice</h4>
+            <p>Still gaming every night. Driving more. Photographing the little things. Eating like it's a sport.</p>
           </div>
         </div>
       </div>
@@ -2234,91 +2361,16 @@
   </section>
 
   <!-- ============================================================
-       TESTIMONIALS
+       SIDE STRIP — wide image break
        ============================================================ -->
-  <section class="section" id="people" style="background: linear-gradient(180deg, #ffffff, #f7f8fb);">
+  <section class="section" id="outside" style="background: linear-gradient(180deg, #ffffff, #f7f8fb); padding-top: 60px;">
     <div class="container">
-      <div class="section-head" style="text-align: center; align-items: center;">
-        <span class="eyebrow reveal">From my circle</span>
-        <h2 class="section-title reveal">
-          What friends and <em>family</em> would say.
-        </h2>
-        <p class="section-lede reveal delay-1" style="margin: 0 auto;">
-          A few quotes I imagine I'd get if my friends were forced to write
-          a yearbook line about me. Unfair, maybe. Mostly accurate.
-        </p>
-      </div>
-
-      <div class="quotes reveal" id="quotes">
-        <div class="quote-track">
-          <article class="quote is-active">
-            <div class="mark">"</div>
-            <blockquote>
-              He'll spend three hours building a Minecraft fountain that no
-              one will ever see, and then explain every block of it to you
-              like it's a TED talk. We love him for it.
-            </blockquote>
-            <div class="quote-author qa-1">
-              <div class="avatar">JK</div>
-              <div class="meta">
-                <strong>Joel K.</strong>
-                <span>Best friend, fellow gamer</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="quote">
-            <div class="mark">"</div>
-            <blockquote>
-              On the cricket field, Amos gives advice he absolutely cannot
-              follow himself. Then he scores a thirty and acts like a coach
-              for the rest of the week. Iconic.
-            </blockquote>
-            <div class="quote-author qa-2">
-              <div class="avatar">RV</div>
-              <div class="meta">
-                <strong>Rohit V.</strong>
-                <span>Classmate, opening partner</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="quote">
-            <div class="mark">"</div>
-            <blockquote>
-              When he started cooking I was scared for the kitchen. Now I'm
-              scared he'll start charging me for dinner. The boy can cook.
-            </blockquote>
-            <div class="quote-author qa-3">
-              <div class="avatar">MA</div>
-              <div class="meta">
-                <strong>Mom</strong>
-                <span>Toughest food critic alive</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="quote">
-            <div class="mark">"</div>
-            <blockquote>
-              In Bio class he asks the kind of question that makes the
-              teacher pause for a second. That's a good kind of student.
-              Outside class he disappears straight to volleyball.
-            </blockquote>
-            <div class="quote-author qa-4">
-              <div class="avatar">SR</div>
-              <div class="meta">
-                <strong>Sneha R.</strong>
-                <span>Bio Science batchmate</span>
-              </div>
-            </div>
-          </article>
-        </div>
-        <div class="quote-controls" id="quoteControls">
-          <button class="is-active" aria-label="Show quote 1"></button>
-          <button aria-label="Show quote 2"></button>
-          <button aria-label="Show quote 3"></button>
-          <button aria-label="Show quote 4"></button>
+      <div class="side-strip reveal">
+        <img src="assets/img/amos-river.jpg" alt="Amos by the river at night" loading="lazy" />
+        <div class="strip-overlay"></div>
+        <div class="strip-caption">
+          Outside the screen.
+          <span>Quiet nights, river dips, deep breaths.</span>
         </div>
       </div>
     </div>
@@ -2344,19 +2396,19 @@
         <div class="now-card reveal reveal-left">
           <h4>This month</h4>
           <ul class="now-list">
-            <li><span class="ic">📚</span> Revising Botany before the term test</li>
             <li><span class="ic">⛏️</span> Building a mountain village on a new seed</li>
             <li><span class="ic">🏏</span> Sunday cricket with the neighbourhood</li>
-            <li><span class="ic">🍝</span> Trying a homemade white sauce — going badly</li>
+            <li><span class="ic">🚗</span> Short evening drives in the Hexa</li>
+            <li><span class="ic">📷</span> Random phone shots when the light is right</li>
           </ul>
         </div>
         <div class="now-card dark reveal reveal-right">
           <h4>Next on my list</h4>
           <ul class="now-list">
             <li><span class="ic">🎯</span> Finish a full survival world (no creative cheats)</li>
-            <li><span class="ic">🏐</span> Start training for inter-school volleyball</li>
-            <li><span class="ic">🍳</span> Master at least 5 Kerala dishes from scratch</li>
-            <li><span class="ic">🌿</span> Crush my Bio Science board exams</li>
+            <li><span class="ic">🏐</span> One more volleyball season with the squad</li>
+            <li><span class="ic">🍛</span> A proper ghee rice plate, every Friday</li>
+            <li><span class="ic">💬</span> Meet more good people, talk more real talk</li>
           </ul>
         </div>
       </div>
@@ -2371,52 +2423,58 @@
       <div class="section-head" style="text-align: center; align-items: center;">
         <span class="eyebrow reveal">Connect</span>
         <h2 class="section-title reveal">
-          Want to talk Minecraft, sports, or food? <em>Find me</em>.
+          Want to talk? <em>Find me here</em>.
         </h2>
         <p class="section-lede reveal delay-1" style="margin: 0 auto;">
-          No email forms — just the platforms I actually check. Drop a
-          message about a build, set up a match, or share a recipe.
+          No email forms — just the two places I actually reply on.
         </p>
       </div>
 
       <div class="connect-grid">
-        <a class="social reveal" href="https://github.com/Amos-Antony-James" target="_blank" rel="noopener">
-          <div class="ic-lg" style="background:#1a1a1a;color:#fff;">★</div>
-          <strong>GitHub</strong>
-          <span>@Amos-Antony-James</span>
-          <span class="go">Visit profile <span class="arrow">→</span></span>
-        </a>
-        <a class="social reveal delay-1" href="#" target="_blank" rel="noopener">
-          <div class="ic-lg" style="background:#e9e7ff;color:#5448ff;">✈</div>
-          <strong>Telegram</strong>
-          <span>Quick chats &amp; voice notes</span>
-          <span class="go">Say hi <span class="arrow">→</span></span>
-        </a>
-        <a class="social reveal delay-2" href="#" target="_blank" rel="noopener">
+        <a class="social reveal" href="https://www.instagram.com/__am__o__s___" target="_blank" rel="noopener">
           <div class="ic-lg" style="background:#fff0e9;color:#e0492b;">📷</div>
           <strong>Instagram</strong>
-          <span>Builds, dishes, match pics</span>
+          <span>@__am__o__s___</span>
           <span class="go">Follow <span class="arrow">→</span></span>
         </a>
-        <a class="social reveal delay-3" href="#" target="_blank" rel="noopener">
-          <div class="ic-lg" style="background:#e7faf3;color:#0fa37a;">🎮</div>
-          <strong>Minecraft SMP</strong>
-          <span>Friends-only server</span>
-          <span class="go">Ping me for invite <span class="arrow">→</span></span>
+        <a class="social reveal delay-1" href="https://wa.me/919539059194" target="_blank" rel="noopener">
+          <div class="ic-lg" style="background:#e7faf3;color:#0fa37a;">💬</div>
+          <strong>WhatsApp</strong>
+          <span>+91 95390 59194</span>
+          <span class="go">Send a message <span class="arrow">→</span></span>
+        </a>
+        <a class="social reveal delay-2" href="tel:+919539059194">
+          <div class="ic-lg" style="background:#e9e7ff;color:#5448ff;">📞</div>
+          <strong>Call</strong>
+          <span>+91 95390 59194</span>
+          <span class="go">Tap to call <span class="arrow">→</span></span>
         </a>
       </div>
 
       <div class="connect-cta reveal reveal-zoom">
-        <h3>Let's keep it simple — say hi.</h3>
+        <h3>Keep it real. Say hi.</h3>
         <p>
-          Whether it's a build idea, a Sunday match, or "you HAVE to try
-          this dish", I'd love to hear it.
+          Minecraft idea, a match, a drive, a plate of ghee rice — I'm
+          easy to reach. Just be kind. That's the only rule.
         </p>
         <div style="display:inline-flex; gap:14px; flex-wrap:wrap; justify-content:center;">
-          <a href="#" class="btn btn-primary">Open Telegram <span class="arrow">→</span></a>
-          <a href="https://github.com/Amos-Antony-James" target="_blank" rel="noopener" class="btn btn-ghost" style="background: rgba(255,255,255,0.08); color:#fff; border-color: rgba(255,255,255,0.18);">Browse my GitHub</a>
+          <a href="https://wa.me/919539059194" target="_blank" rel="noopener" class="btn btn-primary">Open WhatsApp <span class="arrow">→</span></a>
+          <a href="https://www.instagram.com/__am__o__s___" target="_blank" rel="noopener" class="btn btn-ghost" style="background: rgba(255,255,255,0.08); color:#fff; border-color: rgba(255,255,255,0.18);">Open Instagram</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CLOSING LINE — Arthur Morgan style
+       ============================================================ -->
+  <section class="closing-line" aria-label="Closing thought">
+    <div class="container">
+      <blockquote class="reveal">
+        “At the end of the day, you look to the right and smile at
+        what we done.”
+        <cite>— Amos</cite>
+      </blockquote>
     </div>
   </section>
 
@@ -2427,8 +2485,8 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="footer-brand">Amos Antony</div>
-          <p>+2 Bio Science student.<br/>Minecraft builder. Sports kid. Home-cook.</p>
+          <div class="footer-brand">Amos Antony James</div>
+          <p>Gamer. Sports kid. Road kid.<br/>Respect-first, always.</p>
         </div>
         <div>
           <h5>Site</h5>
@@ -2444,22 +2502,22 @@
           <ul>
             <li><a href="#minecraft">Minecraft</a></li>
             <li><a href="#sports">Sports</a></li>
+            <li><a href="#road">On the road</a></li>
             <li><a href="#kitchen">Kitchen</a></li>
-            <li><a href="#now">Currently</a></li>
           </ul>
         </div>
         <div>
           <h5>Find me</h5>
           <ul>
-            <li><a href="https://github.com/Amos-Antony-James" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="#" target="_blank" rel="noopener">Telegram</a></li>
-            <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.instagram.com/__am__o__s___" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://wa.me/919539059194" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="tel:+919539059194">Call</a></li>
             <li><a href="#connect">Connect</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; <span id="footYear">2025</span> Amos Antony. Built with care, no email forms, and a lot of Minecraft music in the background.</span>
+        <span>&copy; <span id="footYear">2025</span> Amos Antony James. Made with respect, no email forms, and a lot of Minecraft music in the background.</span>
         <span><a href="#home">Back to top ↑</a></span>
       </div>
     </div>
@@ -2533,7 +2591,7 @@
       // ----------------------------------------------------------
       // Active link highlight via IntersectionObserver
       // ----------------------------------------------------------
-      const sectionIds = ["home", "about", "interests", "minecraft", "sports", "kitchen", "journey", "connect"];
+      const sectionIds = ["home", "about", "interests", "minecraft", "sports", "road", "kitchen", "journey", "connect"];
       const linkMap = {};
       sectionIds.forEach(function (id) {
         const link = document.querySelector('.nav-links a[href="#' + id + '"]');
@@ -2598,11 +2656,11 @@
       // ----------------------------------------------------------
       const typedEl = document.getElementById("typed");
       const phrases = [
-        "+2 Bio Science student.",
-        "Builder of impossible Minecraft castles.",
-        "Cricket, football, volleyball — in any order.",
-        "Home-cook in training. Foodie for life.",
-        "Curious about everything. Quitting nothing."
+        "Gamer. Sports kid. Road kid.",
+        "Mahindra Invader · Tata Hexa · Honda Unicorn.",
+        "Minecraft for life. Cricket forever.",
+        "Ghee rice = mohabbat.",
+        "Respect-first — always."
       ];
       let phraseIndex = 0;
       let charIndex = 0;
